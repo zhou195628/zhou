@@ -65,7 +65,7 @@ html, body { height: 100%; font-family: -apple-system, BlinkMacSystemFont, 'Ping
 .item-img { width: 89px; height: 89px; border-radius: 10px; background: #f5f0e8; display: flex; align-items: center; justify-content: center; font-size: 32px; flex-shrink: 0; overflow: hidden; }
 .item-img img { width: 89px; height: 89px; border-radius: 10px; object-fit: cover; }
 .item-info { flex: 1; min-width: 0; display: flex; flex-direction: column; justify-content: flex-start; }
-.item-name { font-size: 14px; font-weight: 500; color: #1a1a1a; margin-bottom: 4px; line-height: 1.4; }
+.item-name { font-size: 14px; font-weight: 500; color: #1a1a1a; margin-bottom: 0; line-height: 1.4; }
 .item-desc { font-size: 11px; color: #aaa; line-height: 1.6; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; margin-bottom: 4px; }
 .item-price { font-size: 16px; font-weight: 500; color: #1a1a1a; margin-top: auto; }
 .item-price span { font-size: 11px; margin-right: 1px; }
@@ -145,11 +145,11 @@ const imgCheese4 = "图片蛋糕替换 (2).webp";
 const categories = [
   { id:"cake", label:"蛋糕", items:[
     { name:"4寸奶油蛋糕", desc:"进口动物奶油，口感绵密细腻，甜而不腻", modalDesc:"规格：4寸加高<br>配料：新西兰安佳纯动物奶油、韩国TS幼砂糖、王后精制低筋粉、蒙牛纯牛奶、新鲜鸡蛋、玉米油（非转基因）", price:138, icon:"🎂", tags:["hot"], img:"4寸.webp" },
-    { name:"6寸奶油蛋糕（常规简约）", desc:"可加水果/巧克力装饰，支持定制", modalDesc:"规格：6寸常规简约款<br>配料：新西兰安佳纯动物奶油、韩国TS幼砂糖、王后精制低筋粉、蒙牛纯牛奶、新鲜鸡蛋、玉米油（非转基因）", price:178, icon:"🎂", tags:["hot"], img:"6寸 .webp" },
+    { name:"6寸奶油蛋糕（常规简约）", desc:"进口动物奶油，口感绵密细腻，甜而不腻", modalDesc:"规格：6寸常规简约款<br>配料：新西兰安佳纯动物奶油、韩国TS幼砂糖、王后精制低筋粉、蒙牛纯牛奶、新鲜鸡蛋、玉米油（非转基因）", price:188, icon:"🎂", tags:["hot"], img:"6寸 .webp" },
     { name:"6寸奶油蛋糕（复古裱花）", desc:"精致复古裱花，优雅大方", modalDesc:"规格：6寸复古裱花款<br>配料：新西兰安佳纯动物奶油、韩国TS幼砂糖、王后精制低筋粉、蒙牛纯牛奶、新鲜鸡蛋、玉米油（非转基因）", price:218, icon:"🎂", tags:[], img:"6寸（复古）.webp" },
-    { name:"6寸黑森林蛋糕", desc:"经典德式风味，巧克力与樱桃的完美搭配", modalDesc:"规格：6寸<br>配料：新西兰安佳纯动物奶油、韩国TS幼砂糖、王后精制低筋粉、马来西亚蓝黛可可粉、蒙牛纯牛奶、新鲜鸡蛋、玉米油（非转基因）", price:198, icon:"🍫", tags:[], img:"4寸 (1).webp" },
+    { name:"6寸黑森林蛋糕", desc:"经典德式风味，巧克力与樱桃的完美搭配", modalDesc:"规格：6寸<br>配料：新西兰安佳纯动物奶油、韩国TS幼砂糖、王后精制低筋粉、马来西亚蓝黛可可粉、蒙牛纯牛奶、新鲜鸡蛋、玉米油（非转基因）", price:258, icon:"🍫", tags:[], img:"4寸 (1).webp" },
     { name:"纸杯蛋糕", desc:"小巧可爱，适合一人一份，多种口味可选", modalDesc:"数量：6枚<br>配料：新西兰安佳纯动物奶油、韩国TS幼砂糖、王后精制低筋粉、蒙牛纯牛奶、新鲜鸡蛋、玉米油（非转基因）", price:138, icon:"🧁", tags:["new"], img:"纸杯蛋糕.webp" },
-    { name:"提拉米苏", desc:"经典意式甜点，咖啡香与马斯卡彭的完美结合", modalDesc:"规格：/<br>配料：意大利琪雷萨马斯卡彭奶酪、韩国TS幼砂糖、意大利安诺尼手指饼干、意大利马萨拉白葡萄酒、日本117冻干咖啡、进口蓝黛可可粉、新鲜可生食鸡蛋", price:198, icon:"🍮", tags:["hot"], img:"提拉米苏.webp" },
+    { name:"提拉米苏", desc:"经典意式甜点，咖啡香与马斯卡彭的完美结合", modalDesc:"规格：/<br>配料：意大利琪雷萨马斯卡彭奶酪、韩国TS幼砂糖、意大利安诺尼手指饼干、意大利马萨拉白葡萄酒、日本117冻干咖啡、进口蓝黛可可粉、新鲜可生食鸡蛋", price:218, icon:"🍮", tags:["hot"], img:"提拉米苏.webp" },
     { name:"巧克力布朗尼蛋糕", desc:"浓郁巧克力，绵密湿润，入口即化", modalDesc:"规格：1个<br>配料：新西兰安佳纯动物黄油、新西兰安佳纯动物奶油、韩国TS幼砂糖、王后精制低筋粉、百钻泡打粉、新鲜鸡蛋", price:158, icon:"🍫", tags:[], img:"巧克力布朗尼蛋糕.webp" },
   ]},
   { id:"basque", label:"巴斯克", items:[
@@ -164,7 +164,7 @@ const categories = [
     { name:"喵喵黄油饼干", desc:"萌趣猫咪图案，酥脆可口", modalDesc:"数量：25-30块<br>配料：新西兰安佳纯动物黄油、太古糖粉、王后精制低筋粉、新鲜鸡蛋、可食用色素（美国AmeriColor）", price:128, icon:"🐱", tags:["new"], img:"喵喵.webp" },
     { name:"坚果抱抱黄油饼干", desc:"大颗坚果嵌入，香脆有营养", modalDesc:"数量：30-35块<br>配料：新西兰安佳纯动物黄油、太古糖粉、王后精制低筋粉、新鲜鸡蛋、坚果、口味粉（马来西亚蓝黛可可粉/宇治若竹抹茶粉）", price:138, icon:"🥜", tags:[], img:"坚果抱.webp" },
     { name:"面包超人黄油饼干", desc:"童趣造型，小朋友超爱", modalDesc:"数量：20-25块<br>配料：新西兰安佳纯动物黄油、太古糖粉、王后精制低筋粉、新鲜鸡蛋、可食用色素（美国AmeriColor）", price:128, icon:"🥐", tags:[], img:"面包超人.webp" },
-    { name:"玛格丽特饼干", desc:"经典意式配方，入口即化", modalDesc:"数量：20-35块<br>配料：新西兰安佳纯动物黄油、太古糖粉、王后精制低筋粉、玉米淀粉、新鲜蛋黄、果蔬粉", price:128, icon:"🌸", tags:["hot"], img:"玛格丽特.webp" },
+    { name:"玛格丽特饼干", desc:"经典意式配方，入口即化", modalDesc:"数量：20-35块<br>配料：新西兰安佳纯动物黄油、太古糖粉、王后精制低筋粉、玉米淀粉、新鲜蛋黄、果蔬粉", price:138, icon:"🌸", tags:["hot"], img:"玛格丽特.webp" },
     { name:"蜜桃黄油饼干", desc:"蜜桃清香，甜蜜回味", modalDesc:"数量：24-28块<br>配料：新西兰安佳纯动物黄油、太古糖粉、王后精制低筋粉、新鲜鸡蛋、可食用色素（美国AmeriColor）", price:128, icon:"🍑", tags:["new"], img:"蜜桃.webp" },
     { name:"姜饼人黄油饼干", desc:"节日必备，浓郁肉桂香", modalDesc:"数量：30-35块<br>配料：新西兰安佳纯动物黄油、太古糖粉、王后精制低筋粉、新鲜鸡蛋、马来西亚蓝黛可可粉", price:158, icon:"🏠", tags:["limited"], img:"姜饼人.webp" },
     { name:"圣诞糖霜饼干", desc:"节日限定款，精致糖霜装饰", modalDesc:"数量：24-30块<br>配料：新西兰安佳纯动物黄油、太古糖粉、王后精制低筋粉、新鲜鸡蛋", price:158, icon:"🎄", tags:["limited"], img:"圣诞糖霜.webp" },
@@ -189,14 +189,14 @@ const categories = [
     { name:"抹茶红豆司康", desc:"宇治抹茶搭配蜜红豆，经典搭配", modalDesc:"数量：12-18块<br>配料：新西兰安佳纯动物黄油、新西兰安佳纯动物奶油、韩国TS幼砂糖、王后精制低筋粉、澳大利亚德运奶粉、宇治若竹抹茶粉、新鲜鸡蛋、蜜豆", price:128, icon:"🍵", tags:[], img:"抹茶红豆.webp" },
   ]},
   { id:"snowflake", label:"雪花酥", items:[
-    { name:"原味雪花酥", desc:"酥脆香甜，奶香浓郁", modalDesc:"规格：1份<br>配料：新西兰安佳纯动物黄油、澳大利亚德运奶粉、棉花糖、草莓冻干、小奇福饼干、坚果", price:118, icon:"❄️", tags:["hot"], img:"原味雪花酥.webp" },
-    { name:"抹茶雪花酥", desc:"清新抹茶，回甘悠长", modalDesc:"规格：1份<br>配料：新西兰安佳纯动物黄油、澳大利亚德运奶粉、宇治若竹抹茶粉、棉花糖、无花果冻干、草莓冻干、小奇福饼干、坚果", price:118, icon:"🍵", tags:[], img:"抹茶雪花酥.webp" },
-    { name:"奥利奥雪花酥", desc:"香脆奥利奥，双重美味", modalDesc:"规格：1份<br>配料：新西兰安佳纯动物黄油、澳大利亚德运奶粉、马来西亚蓝黛可可粉、棉花糖、草莓冻干、奥利奥饼干、小奇福饼干、坚果", price:118, icon:"🍫", tags:["new"], img:"奥利奥雪花酥.webp" },
+    { name:"原味雪花酥", desc:"酥脆香甜，奶香浓郁", modalDesc:"规格：1份<br>配料：新西兰安佳纯动物黄油、澳大利亚德运奶粉、棉花糖、草莓冻干、小奇福饼干、坚果", price:128, icon:"❄️", tags:["hot"], img:"原味雪花酥.webp" },
+    { name:"抹茶雪花酥", desc:"清新抹茶，回甘悠长", modalDesc:"规格：1份<br>配料：新西兰安佳纯动物黄油、澳大利亚德运奶粉、宇治若竹抹茶粉、棉花糖、无花果冻干、草莓冻干、小奇福饼干、坚果", price:128, icon:"🍵", tags:[], img:"抹茶雪花酥.webp" },
+    { name:"奥利奥雪花酥", desc:"香脆奥利奥，双重美味", modalDesc:"规格：1份<br>配料：新西兰安佳纯动物黄油、澳大利亚德运奶粉、马来西亚蓝黛可可粉、棉花糖、草莓冻干、奥利奥饼干、小奇福饼干、坚果", price:128, icon:"🍫", tags:["new"], img:"奥利奥雪花酥.webp" },
   ]},
   { id:"nougat", label:"牛轧糖", items:[
-    { name:"经典原味牛轧糖", desc:"香浓奶香，软糯可口", modalDesc:"规格：1份<br>配料：新西兰安佳纯动物黄油、澳大利亚德运奶粉、棉花糖、花生、蔓越莓干", price:118, icon:"🍬", tags:["hot"], img:"原味牛轧糖.webp" },
-    { name:"芒果椰香牛轧糖", desc:"热带风情，芒果椰香", modalDesc:"规格：1份<br>配料：新西兰安佳纯动物黄油、澳大利亚德运奶粉、椰子油、棉花糖、巴旦木、印尼黄金椰粒、椰蓉", price:118, icon:"🥭", tags:["new"], img:"芒果牛轧糖.webp" },
-    { name:"抹茶花生牛轧糖", desc:"宇治抹茶搭配香脆花生", modalDesc:"规格：1份<br>配料：新西兰安佳纯动物黄油、澳大利亚德运奶粉、宇治若竹抹茶粉、棉花糖、花生、蔓越莓干", price:118, icon:"🍵", tags:[], img:"抹茶牛轧糖.webp" },
+    { name:"经典原味牛轧糖", desc:"香浓奶香，软糯可口", modalDesc:"规格：1份<br>配料：新西兰安佳纯动物黄油、澳大利亚德运奶粉、棉花糖、花生、蔓越莓干", price:128, icon:"🍬", tags:["hot"], img:"原味牛轧糖.webp" },
+    { name:"芒果椰香牛轧糖", desc:"热带风情，芒果椰香", modalDesc:"规格：1份<br>配料：新西兰安佳纯动物黄油、澳大利亚德运奶粉、椰子油、棉花糖、巴旦木、印尼黄金椰粒、椰蓉", price:128, icon:"🥭", tags:["new"], img:"芒果牛轧糖.webp" },
+    { name:"抹茶花生牛轧糖", desc:"宇治抹茶搭配香脆花生", modalDesc:"规格：1份<br>配料：新西兰安佳纯动物黄油、澳大利亚德运奶粉、宇治若竹抹茶粉、棉花糖、花生、蔓越莓干", price:128, icon:"🍵", tags:[], img:"抹茶牛轧糖.webp" },
   ]},
   { id:"dessert", label:"甜品", items:[
     { name:"巧克力甜甜圈", desc:"外层巧克力酱，内里松软香甜", modalDesc:"规格：1份<br>配料：新鲜鸡蛋、韩国TS幼砂糖、王后精制低筋粉、百钻泡打粉、玉米油（非转基因）", price:128, icon:"🍩", tags:["hot"], img:"甜甜圈.webp" },
@@ -209,11 +209,11 @@ const categories = [
   ]},
   { id:"snack", label:"点心", items:[
     { name:"经典凤梨酥", desc:"台氏经典，酸甜凤梨馅", modalDesc:"数量：6枚<br>配料：新西兰安佳纯动物黄油、太古糖粉、新鲜鸡蛋、王后精制低筋粉、特级土凤梨馅、黎宝斑斓粉", price:138, icon:"🍍", tags:["hot"], img:"凤梨酥.webp" },
-    { name:"低糖红豆奶酥", desc:"低糖配方，红豆香甜", modalDesc:"规格：1份<br>配料：新西兰安佳纯动物黄油、太古糖粉、新鲜鸡蛋、王后精制低筋粉、澳大利亚德运奶粉、低糖红豆沙馅", price:128, icon:"🥮", tags:[], img:"红豆奶酥.webp" },
-    { name:"笑脸娃娃蛋糕", desc:"可爱笑脸造型，童趣十足", modalDesc:"数量：1份<br>配料：新西兰安佳纯动物奶油、韩国TS幼砂糖、蒙牛牛奶、王后精制低筋粉、新鲜鸡蛋、玉米油（非转基因）、百钻泡打粉", price:128, icon:"😊", tags:["new"], img:"笑脸娃娃.webp" },
-    { name:"肉松小贝", desc:"柔软蛋糕体，裹满香酥肉松", modalDesc:"规格：1份<br>配料：王后精制低筋粉、韩国TS幼砂糖、蒙牛牛奶、新鲜鸡蛋、玉米油（非转基因）、丘比沙拉酱、海苔肉松", price:128, icon:"🍞", tags:[], img:"肉松小贝.webp" },
-    { name:"黄油坚果脆脆", desc:"香脆黄油与坚果的完美结合", modalDesc:"规格：1份<br>配料：新西兰安佳纯动物黄油、王后精制低筋粉、韩国TS幼砂糖、新鲜鸡蛋、坚果", price:118, icon:"🥜", tags:[], img:"坚果脆脆.webp" },
-    { name:"法式杏仁瓦片", desc:"薄脆杏仁片，香酥可口", modalDesc:"规格：1份<br>配料：新西兰安佳纯动物黄油、新西兰安佳纯动物奶油、王后精制低筋粉、太古糖粉、新鲜鸡蛋、美国蓝钻杏仁片", price:128, icon:"🍪", tags:[], img:"杏仁瓦片.webp" },
+    { name:"低糖红豆奶酥", desc:"低糖配方，红豆香甜", modalDesc:"规格：1份<br>配料：新西兰安佳纯动物黄油、太古糖粉、新鲜鸡蛋、王后精制低筋粉、澳大利亚德运奶粉、低糖红豆沙馅", price:138, icon:"🥮", tags:[], img:"红豆奶酥.webp" },
+    { name:"笑脸娃娃蛋糕", desc:"可爱笑脸造型，童趣十足", modalDesc:"数量：1份<br>配料：新西兰安佳纯动物奶油、韩国TS幼砂糖、蒙牛牛奶、王后精制低筋粉、新鲜鸡蛋、玉米油（非转基因）、百钻泡打粉", price:138, icon:"😊", tags:["new"], img:"笑脸娃娃.webp" },
+    { name:"肉松小贝", desc:"柔软蛋糕体，裹满香酥肉松", modalDesc:"规格：1份<br>配料：王后精制低筋粉、韩国TS幼砂糖、蒙牛牛奶、新鲜鸡蛋、玉米油（非转基因）、丘比沙拉酱、海苔肉松", price:138, icon:"🍞", tags:[], img:"肉松小贝.webp" },
+    { name:"黄油坚果脆脆", desc:"香脆黄油与坚果的完美结合", modalDesc:"规格：1份<br>配料：新西兰安佳纯动物黄油、王后精制低筋粉、韩国TS幼砂糖、新鲜鸡蛋、坚果", price:128, icon:"🥜", tags:[], img:"坚果脆脆.webp" },
+    { name:"法式杏仁瓦片", desc:"薄脆杏仁片，香酥可口", modalDesc:"规格：1份<br>配料：新西兰安佳纯动物黄油、新西兰安佳纯动物奶油、王后精制低筋粉、太古糖粉、新鲜鸡蛋、美国蓝钻杏仁片", price:138, icon:"🍪", tags:[], img:"杏仁瓦片.webp" },
   ]},
   { id:"chocolate", label:"巧克力", items:[
     { name:"迪拜巧克力", desc:"网红爆款，浓郁夹心，奢华体验", modalDesc:"规格：1份<br>配料：法国可可百利巧克力、新西兰安佳纯动物黄油、土耳其面包丝、日本正荣开心果酱、可食用色素（美国AmeriColor）", price:298, icon:"🍫", tags:["hot"], img:"迪拜巧克力.webp" },
