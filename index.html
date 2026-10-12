@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<script src="https://lf-cdn.coze.cn/obj/unpkg/coze-space/page-editor-general-web/0.1.0-alpha.274555/dist/umd/index.js"></script><script src="https://lf-cdn.coze.cn/obj/unpkg/coze-webapp/console-bridge/0.0.1-alpha.b2eb33/dist/index.js"></script><script src="https://lf-cdn.coze.cn/obj/unpkg/coze-webapp/history-bridge/0.0.1-alpha.9e64d9/dist/index.min.js"></script><head>
+<head>
 <meta charset="UTF-8">
+<link rel="preload" as="image" href="企业微信20260410-111630@2x.webp" type="image/webp">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>MamaMoon烘焙教室</title>
 <style>
@@ -91,7 +92,7 @@ html, body { height: 100%; font-family: -apple-system, BlinkMacSystemFont, 'Ping
 </head>
 <body>
 <div class="app">
-  <img class="banner" src="企业微信20260410-111630@2x.webp" alt="Banner">
+  <img class="banner" src="企业微信20260410-111630@2x.webp" alt="Banner" fetchpriority="high" decoding="async">
   <div class="header">
     <div class="shop-name">MamaMoon烘焙教室</div>
     <div class="shop-meta-row">
@@ -324,7 +325,8 @@ function renderMenu() {
     cat.items.forEach((item) => {
       const d = document.createElement('div');
       d.className = 'item-card';
-      d.innerHTML = '<div class="item-img">' + (item.img ? '<img src="' + item.img + '" loading="lazy" decoding="async">' : item.icon) + '</div><div class="item-info"><div class="item-name">' + item.name + '</div>' + tagHtml(item.tags) + '<div class="item-desc">' + item.desc + '</div><div class="item-price"><span>¥</span>' + item.price + '</div></div>';
+      const imageAttrs = item.img ? (cat.id === 'cake' ? ' loading="eager" fetchpriority="high" decoding="async"' : ' loading="lazy" decoding="async"') : '';
+      d.innerHTML = '<div class="item-img">' + (item.img ? '<img src="' + item.img + '"' + imageAttrs + '>' : item.icon) + '</div><div class="item-info"><div class="item-name">' + item.name + '</div>' + tagHtml(item.tags) + '<div class="item-desc">' + item.desc + '</div><div class="item-price"><span>¥</span>' + item.price + '</div></div>';
       d.onclick = () => openModal(item);
       sec.appendChild(d);
     });
