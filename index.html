@@ -5,6 +5,19 @@
 <link rel="preload" as="image" href="企业微信20260410-111630@2x.webp" type="image/webp">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>MamaMoon烘焙教室</title>
+<meta name="description" content="MamaMoon烘焙教室，陪你欢度每个值得庆祝的时刻。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.mamamoon.cn/">
+<meta property="og:title" content="MamaMoon烘焙教室">
+<meta property="og:description" content="MamaMoon烘焙教室，陪你欢度每个值得庆祝的时刻。">
+<meta property="og:image" content="https://www.mamamoon.cn/share.png">
+<meta property="og:image:secure_url" content="https://www.mamamoon.cn/share.png">
+<meta property="og:image:width" content="1332">
+<meta property="og:image:height" content="1338">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="MamaMoon烘焙教室">
+<meta name="twitter:description" content="MamaMoon烘焙教室，陪你欢度每个值得庆祝的时刻。">
+<meta name="twitter:image" content="https://www.mamamoon.cn/share.png">
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
 html, body { height: 100%; font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Helvetica Neue', sans-serif; background: #f5f3ef; }
@@ -60,8 +73,8 @@ html, body { height: 100%; font-family: -apple-system, BlinkMacSystemFont, 'Ping
 .menu-list::-webkit-scrollbar { display: none; }
 .category-title { font-size: 14px; font-weight: 600; color: #1a1a1a; padding: 14px 14px 10px; background: #fff; position: sticky; top: 0; z-index: 2; border-bottom: 0.5px solid #f0ece4; display: flex; align-items: baseline; gap: 4px; }
 .category-count { font-size: 12px; color: #bbb; font-weight: 400; }
-.item-card { display: flex; align-items: stretch; gap: 10px; padding: 12px 14px; border-bottom: 0.5px solid #f5f2ec; cursor: pointer; transition: background 0.2s; }
-.item-card:active { background: #f9f7f4; }
+.item-card { display: flex; align-items: stretch; gap: 10px; padding: 12px 14px; border-bottom: 0.5px solid #f5f2ec; cursor: pointer; transition: background-color 0.18s ease, transform 0.18s ease; touch-action: manipulation; }
+.item-card:active { background: #f9f7f4; transform: scale(0.985); }
 .item-img { width: 89px; height: 89px; border-radius: 10px; background: #f5f0e8; display: flex; align-items: center; justify-content: center; font-size: 32px; flex-shrink: 0; overflow: hidden; }
 .item-img img { width: 89px; height: 89px; border-radius: 10px; object-fit: cover; }
 .item-info { flex: 1; min-width: 0; display: flex; flex-direction: column; justify-content: flex-start; }
@@ -73,24 +86,29 @@ html, body { height: 100%; font-family: -apple-system, BlinkMacSystemFont, 'Ping
 .tag-hot { background: #fff0e8; color: #c05a20; }
 .tag-new { background: #e8f5e8; color: #3a7a3a; }
 .tag-limited { background: #f0e8ff; color: #7040a0; }
-.modal-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); display: flex; align-items: flex-end; justify-content: center; z-index: 1000; opacity: 0; visibility: hidden; transition: opacity 0.3s, visibility 0.3s; }
+.modal-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); display: flex; align-items: flex-end; justify-content: center; z-index: 1000; opacity: 0; visibility: hidden; transition: opacity 0.28s cubic-bezier(0.22, 0.61, 0.36, 1), visibility 0.28s; will-change: opacity; }
 .modal-overlay.active { opacity: 1; visibility: visible; }
-.modal { background: #fff; width: 100%; max-width: 480px; height: 680px; max-height: calc(100vh - 24px); max-height: calc(100dvh - 24px); border-radius: 20px 20px 0 0; transform: translateY(100%); transition: transform 0.3s ease-out; overflow: hidden; display: flex; flex-direction: column; }
-.modal-overlay.active .modal { transform: translateY(0); }
+.modal { background: #fff; width: 100%; max-width: 480px; height: 680px; max-height: calc(100vh - 24px); max-height: calc(100dvh - 24px); border-radius: 20px 20px 0 0; transform: translate3d(0, 100%, 0); transition: transform 0.34s cubic-bezier(0.22, 1, 0.36, 1); overflow: hidden; display: flex; flex-direction: column; will-change: transform; backface-visibility: hidden; contain: layout paint; }
+.modal-overlay.active .modal { transform: translate3d(0, 0, 0); }
 .modal-close { position: absolute; top: 16px; right: 16px; width: 30px; height: 30px; background: rgba(200,200,200,0.8); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 16px; color: #666; z-index: 10; }
 .modal-img-wrap { width: 100%; background: #fff; padding: 18px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; font-size: 90px; border-radius: 20px 20px 0 0; position: relative; overflow: hidden; flex: 0 0 auto; }
 .modal-img-wrap .img-container { width: 100%; max-width: 444px; aspect-ratio: 1 / 1; display: flex; align-items: center; justify-content: center; margin: 0 auto; overflow: hidden; border-radius: 12px; }
-.modal-img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.modal-info { width: 100%; flex: 1 1 auto; min-height: 0; padding: 0 18px calc(18px + env(safe-area-inset-bottom)) 18px; display: flex; flex-direction: column; overflow-y: auto; -webkit-overflow-scrolling: touch; }
+.modal-img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; transform: translateZ(0); }
+.modal-info { width: 100%; flex: 1 1 auto; min-height: 0; padding: 0 18px calc(18px + env(safe-area-inset-bottom)) 18px; display: flex; flex-direction: column; overflow-y: auto; -webkit-overflow-scrolling: touch; overscroll-behavior: contain; }
 .modal-name { font-size: 22px; font-weight: 600; color: #1a1a1a; margin-bottom: 12px; line-height: 1.3; }
 .modal-desc { font-size: 14px; color: #9e9e9e; line-height: 1.7; margin-bottom: 18px; flex: 0 0 auto; }
 .modal-desc-label { color: #8b5e3c; font-weight: 500; }
 .modal-footer { padding-top: 8px; flex: 0 0 auto; }
 .modal-price { font-size: 28px; font-weight: 700; color: #1a1a1a; }
 .modal-price span { font-size: 16px; }
+.modal-overlay.image-only .modal-img-wrap { padding: 18px 18px calc(18px + env(safe-area-inset-bottom)) 18px; align-items: flex-start; flex: 1 1 auto; min-height: 0; overflow-y: auto; -webkit-overflow-scrolling: touch; }
+.modal-overlay.image-only .modal-img-wrap .img-container { width: 100%; max-width: 444px; aspect-ratio: auto; align-items: flex-start; overflow: visible; }
+.modal-overlay.image-only .modal-img-wrap img { width: 100%; height: auto; object-fit: contain; border-radius: 12px; }
+.modal-overlay.image-only .modal-info { display: none; }
 </style>
 </head>
 <body>
+<img src="share.png" alt="MamaMoon烘焙教室" style="position:absolute;width:1px;height:1px;opacity:0;pointer-events:none;left:-9999px;top:-9999px;" aria-hidden="true">
 <div class="app">
   <img class="banner" src="企业微信20260410-111630@2x.webp" alt="Banner" fetchpriority="high" decoding="async">
   <div class="header">
@@ -148,87 +166,87 @@ const categories = [
     { name:"6寸奶油蛋糕（常规简约）", desc:"进口动物奶油，口感绵密细腻，甜而不腻", modalDesc:"规格：6寸常规简约款<br>时长：1h - 1.5h<br>配料：安佳动物奶油、韩国TS幼砂糖、王后低筋粉、蒙牛纯牛奶、新鲜鸡蛋、玉米油（非转基因）<br>*蛋糕胚由门店提前准备，暂不提供现场烤制蛋糕胚服务", price:188, icon:"🎂", tags:["hot"], img:"6寸 .webp" },
     { name:"6寸奶油蛋糕（复古裱花）", desc:"精致复古裱花，优雅大方", modalDesc:"规格：6寸复古裱花款<br>时长：1.5h - 2h<br>配料：安佳动物奶油、韩国TS幼砂糖、王后低筋粉、蒙牛纯牛奶、新鲜鸡蛋、玉米油（非转基因）<br>*蛋糕胚由门店提前准备，暂不提供现场烤制蛋糕胚服务", price:218, icon:"🎂", tags:[], img:"6寸（复古）.webp" },
     { name:"8寸奶油蛋糕", desc:"进口动物奶油，口感绵密细腻，甜而不腻", modalDesc:"规格：8寸<br>时长：1h - 1.5h<br>配料：安佳动物奶油、韩国TS幼砂糖、王后低筋粉、蒙牛纯牛奶、新鲜鸡蛋、玉米油（非转基因）<br>*蛋糕胚由门店提前准备，暂不提供现场烤制蛋糕胚服务", price:298, icon:"🎂", tags:[], img:"6寸 .webp" },
-    { name:"6寸黑森林蛋糕", desc:"经典德式风味，巧克力与樱桃的完美搭配", modalDesc:"规格：6寸<br>时长：2h - 2h<br>配料：安佳动物奶油、韩国TS幼砂糖、王后低筋粉、马来西亚蓝黛可可粉、蒙牛纯牛奶、新鲜鸡蛋、玉米油（非转基因）", price:258, icon:"🍫", tags:[], img:"4寸 (1).webp" },
+    { name:"6寸黑森林蛋糕", desc:"经典德式风味，巧克力与樱桃的完美搭配", modalDesc:"规格：6寸<br>时长：2h<br>配料：安佳动物奶油、韩国TS幼砂糖、王后低筋粉、可可粉、蒙牛纯牛奶、新鲜鸡蛋、玉米油（非转基因）", price:258, icon:"🍫", tags:[], img:"4寸 (1).webp" },
     { name:"纸杯蛋糕", desc:"小巧可爱，适合一人一份，多种口味可选", modalDesc:"数量：6枚<br>时长：1.5h - 2h<br>配料：安佳动物奶油、韩国TS幼砂糖、王后低筋粉、蒙牛纯牛奶、新鲜鸡蛋、玉米油（非转基因）", price:138, icon:"🧁", tags:["new"], img:"纸杯蛋糕.webp" },
     { name:"提拉米苏", desc:"经典意式甜点，咖啡香与马斯卡彭的完美结合", modalDesc:"规格：/<br>时长：1h - 1.5h<br>配料：意大利琪雷萨马斯卡彭奶酪、韩国TS幼砂糖、意大利安诺尼手指饼干、意大利马萨拉白葡萄酒、日本117冻干咖啡、进口蓝黛可可粉、新鲜可生食鸡蛋", price:218, icon:"🍮", tags:["hot"], img:"提拉米苏.webp" },
     { name:"巧克力布朗尼蛋糕", desc:"浓郁巧克力，绵密湿润，入口即化", modalDesc:"规格：1个<br>时长：1.5h - 2h<br>配料：安佳动物黄油、安佳动物奶油、韩国TS幼砂糖、王后低筋粉、百钻泡打粉、新鲜鸡蛋", price:158, icon:"🍫", tags:[], img:"巧克力布朗尼蛋糕.webp" },
   ]},
   { id:"basque", label:"巴斯克", items:[
-    { name:"经典原味巴斯克", desc:"焦香外皮，软糯内心，芝士浓郁", modalDesc:"规格：6寸<br>时长：2h - 2h<br>配料：法国Kiri奶油奶酪、安佳动物奶油、韩国TS幼砂糖、新鲜鸡蛋、玉米淀粉", price:278, img:"原味.webp", tags:["hot"] },
-    { name:"蓝莓巴斯克", desc:"新鲜蓝莓与绵密芝士，酸甜可口", modalDesc:"规格：6寸<br>时长：2h - 2h<br>配料：法国Kiri奶油奶酪、安佳动物奶油、韩国TS幼砂糖、新鲜鸡蛋、玉米淀粉、新鲜蓝莓", price:278, img:"蓝莓.webp", tags:["hot"] },
-    { name:"伯爵红茶巴斯克", desc:"伯爵红茶香气，优雅绵长", modalDesc:"规格：6寸<br>时长：2h - 2h<br>配料：法国Kiri奶油奶酪、安佳动物奶油、斯里兰卡迪尔玛伯爵红茶、韩国TS幼砂糖、新鲜鸡蛋、玉米淀粉", price:278, img:"伯爵红茶.webp", tags:[] },
-    { name:"抹茶柚子巴斯克", desc:"宇治抹茶搭配清新柚子，回甘悠长", modalDesc:"规格：6寸<br>时长：2h - 2h<br>配料：法国Kiri奶油奶酪、安佳动物奶油、韩国全南蜂蜜柚子茶、韩国TS幼砂糖、日本柚子果茸、新鲜鸡蛋、玉米淀粉", price:278, img:"抹茶柚子.webp", tags:["new"] },
-    { name:"生巧巴斯克", desc:"浓郁生巧风味，绵密芝士与巧克力香气交融", modalDesc:"规格：6寸<br>时长：2h - 2h<br>配料：法国Kiri奶油奶酪、安佳动物奶油、巧克力、韩国TS幼砂糖、新鲜鸡蛋、玉米淀粉", price:278, img:"生巧巴斯克.png", tags:[] },
+    { name:"经典原味巴斯克", desc:"焦香外皮，软糯内心，芝士浓郁", modalDesc:"规格：6寸<br>时长：2h<br>配料：法国Kiri奶油奶酪、安佳动物奶油、韩国TS幼砂糖、新鲜鸡蛋、玉米淀粉", price:278, img:"原味.webp", tags:["hot"] },
+    { name:"蓝莓巴斯克", desc:"新鲜蓝莓与绵密芝士，酸甜可口", modalDesc:"规格：6寸<br>时长：2h<br>配料：法国Kiri奶油奶酪、安佳动物奶油、韩国TS幼砂糖、新鲜鸡蛋、玉米淀粉、新鲜蓝莓", price:278, img:"蓝莓.webp", tags:["hot"] },
+    { name:"伯爵红茶巴斯克", desc:"伯爵红茶香气，优雅绵长", modalDesc:"规格：6寸<br>时长：2h<br>配料：法国Kiri奶油奶酪、安佳动物奶油、斯里兰卡迪尔玛伯爵红茶、韩国TS幼砂糖、新鲜鸡蛋、玉米淀粉", price:278, img:"伯爵红茶.webp", tags:[] },
+    { name:"抹茶柚子巴斯克", desc:"宇治抹茶搭配清新柚子，回甘悠长", modalDesc:"规格：6寸<br>时长：2h<br>配料：法国Kiri奶油奶酪、安佳动物奶油、韩国全南蜂蜜柚子茶、韩国TS幼砂糖、日本柚子果茸、新鲜鸡蛋、玉米淀粉", price:278, img:"抹茶柚子.webp", tags:["new"] },
+    { name:"生巧巴斯克", desc:"浓郁生巧风味，绵密芝士与巧克力香气交融", modalDesc:"规格：6寸<br>时长：2h<br>配料：法国Kiri奶油奶酪、安佳动物奶油、巧克力、韩国TS幼砂糖、新鲜鸡蛋、玉米淀粉", price:278, img:"生巧巴斯克.png", tags:[] },
   ]},
   { id:"biscuit", label:"饼干", items:[
-    { name:"卡通黄油饼干", desc:"可爱卡通造型，浓郁黄油香", modalDesc:"数量：25-40块<br>时长：2h - 2h<br>配料：安佳动物黄油、太古糖粉、王后低筋粉、新鲜鸡蛋、口味粉（马来西亚蓝黛可可粉/宇治若竹抹茶粉）", price:128, icon:"🍪", tags:["hot"], img:"卡通黄油.webp" },
-    { name:"喵喵黄油饼干", desc:"萌趣猫咪图案，酥脆可口", modalDesc:"数量：25-30块<br>时长：2h - 2h<br>配料：安佳动物黄油、太古糖粉、王后低筋粉、新鲜鸡蛋、可食用色素（美国AmeriColor）", price:128, icon:"🐱", tags:["new"], img:"喵喵.webp" },
-    { name:"坚果抱抱黄油饼干", desc:"大颗坚果嵌入，香脆有营养", modalDesc:"数量：30-35块<br>时长：2h - 2h<br>配料：安佳动物黄油、太古糖粉、王后低筋粉、新鲜鸡蛋、坚果、口味粉（马来西亚蓝黛可可粉/宇治若竹抹茶粉）", price:138, icon:"🥜", tags:[], img:"坚果抱.webp" },
-    { name:"面包超人黄油饼干", desc:"童趣造型，小朋友超爱", modalDesc:"数量：20-25块<br>时长：2h - 2h<br>配料：安佳动物黄油、太古糖粉、王后低筋粉、新鲜鸡蛋、可食用色素（美国AmeriColor）", price:128, icon:"🥐", tags:[], img:"面包超人.webp" },
-    { name:"玛格丽特饼干", desc:"经典意式配方，入口即化", modalDesc:"数量：20-35块<br>时长：2h - 2h<br>配料：安佳动物黄油、太古糖粉、王后低筋粉、玉米淀粉、新鲜蛋黄、果蔬粉", price:138, icon:"🌸", tags:["hot"], img:"玛格丽特.webp" },
+    { name:"卡通黄油饼干", desc:"可爱卡通造型，浓郁黄油香", modalDesc:"数量：25-40块<br>时长：1.5h - 2h<br>配料：安佳动物黄油、太古糖粉、王后低筋粉、新鲜鸡蛋、口味粉（可可粉/抹茶粉）", price:128, icon:"🍪", tags:["hot"], img:"卡通黄油.webp" },
+    { name:"喵喵黄油饼干", desc:"萌趣猫咪图案，酥脆可口", modalDesc:"数量：25-30块<br>时长：1.5h - 2h<br>配料：安佳动物黄油、太古糖粉、王后低筋粉、新鲜鸡蛋、可食用色素（美国AmeriColor）", price:128, icon:"🐱", tags:["new"], img:"喵喵.webp" },
+    { name:"坚果抱抱黄油饼干", desc:"大颗坚果嵌入，香脆有营养", modalDesc:"数量：30-35块<br>时长：1.5h - 2h<br>配料：安佳动物黄油、太古糖粉、王后低筋粉、新鲜鸡蛋、坚果、口味粉（可可粉/抹茶粉）", price:138, icon:"🥜", tags:[], img:"坚果抱.webp" },
+    { name:"面包超人黄油饼干", desc:"童趣造型，小朋友超爱", modalDesc:"数量：20-25块<br>时长：1.5h - 2h<br>配料：安佳动物黄油、太古糖粉、王后低筋粉、新鲜鸡蛋、可食用色素（美国AmeriColor）", price:128, icon:"🥐", tags:[], img:"面包超人.webp" },
+    { name:"玛格丽特饼干", desc:"经典意式配方，入口即化", modalDesc:"数量：20-35块<br>时长：1.5h - 2h<br>配料：安佳动物黄油、太古糖粉、王后低筋粉、玉米淀粉、新鲜蛋黄、果蔬粉", price:138, icon:"🌸", tags:["hot"], img:"玛格丽特.webp" },
     { name:"圣诞糖霜饼干", desc:"节日限定款，精致糖霜装饰", modalDesc:"数量：24-30块<br>时长：2.5h - 3.5h<br>配料：安佳动物黄油、太古糖粉、王后低筋粉、新鲜鸡蛋<br>*周六日及法定节假日的12:00 - 18:00门店暂不支持制作", price:158, icon:"🎄", tags:["limited"], img:"圣诞糖霜.webp" },
     { name:"复古糖霜饼干", desc:"复古花纹设计，精致优雅", modalDesc:"数量：24-30块<br>时长：2.5h - 3.5h<br>配料：安佳动物黄油、太古糖粉、王后低筋粉、新鲜鸡蛋<br>*周六日及法定节假日的12:00 - 18:00门店暂不支持制作", price:158, icon:"✨", tags:[], img:"复古糖霜.webp" },
   ]},
   { id:"cookies", label:"曲奇", items:[
     { name:"爱心黄油曲奇", desc:"浪漫爱心造型，浓郁黄油香", modalDesc:"数量：22-25块<br>时长：1.5h - 2h<br>配料：安佳动物黄油、太古糖粉、王后低筋粉、新鲜鸡蛋、美国Lorann红丝绒液", price:138, icon:"❤️", tags:["hot"], img:"爱心曲奇.webp" },
-    { name:"圣诞黄油曲奇", desc:"节日限定款，圣诞主题造型", modalDesc:"数量：22-25块<br>时长：1.5h - 2h<br>配料：安佳动物黄油、太古糖粉、王后低筋粉、新鲜鸡蛋、口味粉（马来西亚蓝黛可可粉/宇治若竹抹茶粉）", price:138, icon:"🎄", tags:["limited"], img:"圣诞曲奇.webp" },
+    { name:"圣诞黄油曲奇", desc:"节日限定款，圣诞主题造型", modalDesc:"数量：22-25块<br>时长：1.5h - 2h<br>配料：安佳动物黄油、太古糖粉、王后低筋粉、新鲜鸡蛋、口味粉（可可粉/抹茶粉）", price:138, icon:"🎄", tags:["limited"], img:"圣诞曲奇.webp" },
     { name:"草莓酱爱心曲奇", desc:"酥脆曲奇搭配自制草莓酱，酸甜可口", modalDesc:"数量：18-22块<br>时长：1.5h - 2h<br>配料：安佳动物黄油、太古糖粉、王后低筋粉、新鲜鸡蛋、草莓酱", price:128, icon:"🍓", tags:["new"], img:"草莓酱曲奇.webp" },
-    { name:"苹果切片曲奇", desc:"仿真苹果造型，清新可爱", modalDesc:"数量：30-40块<br>时长：2h - 2h<br>配料：安佳动物黄油、太古糖粉、王后低筋粉、新鲜鸡蛋、美国Lorann红丝绒液、黑芝麻", price:128, icon:"🍎", tags:[], img:"苹果曲奇.webp" },
-    { name:"蔓越莓花园曲奇", desc:"酸甜蔓越莓，花园风情", modalDesc:"数量：28-35块<br>时长：1.5h - 2h<br>配料：安佳动物黄油、太古糖粉、王后低筋粉、新鲜鸡蛋、宇治若竹抹茶粉、蔓越莓干", price:128, icon:"🌸", tags:[], img:"抹茶蔓越莓.webp" },
-    { name:"可可杏仁曲奇", desc:"浓郁可可与大颗杏仁，香脆可口", modalDesc:"数量：28-35块<br>时长：1.5h - 2h<br>配料：安佳动物黄油、太古糖粉、王后低筋粉、新鲜鸡蛋、马来西亚蓝黛可可粉、美国蓝钻杏仁片", price:128, icon:"🌰", tags:[], img:"可可杏仁.webp" },
-    { name:"蜘蛛花生酱曲奇", desc:"万圣节限定，趣味造型", modalDesc:"数量：15块<br>时长：1.5h - 1.5h<br>配料：安佳动物黄油、太古糖粉、王后低筋粉、新鲜鸡蛋、美国四季宝花生酱、百钻泡打粉、麦丽素", price:128, icon:"🕷️", tags:["limited"], img:"蜘蛛曲奇.webp" },
-    { name:"木乃伊可可曲奇", desc:"万圣节限定，神秘木乃伊造型", modalDesc:"数量：15块<br>时长：1h - 1.5h<br>配料：安佳动物黄油、太古糖粉、王后低筋粉、新鲜鸡蛋、马来西亚蓝黛可可粉、百钻泡打粉", price:128, icon:"🧟", tags:["limited"], img:"木乃伊曲奇.webp" },
-    { name:"经典纽约大曲奇", desc:"美式经典，大块巧克力碎片", modalDesc:"数量：8-12块<br>时长：1h - 1.5h<br>配料：安佳动物黄油、韩国TS幼砂糖、太古黄糖、王后低筋粉、新鲜鸡蛋、百钻泡打粉、巧克力、坚果", price:128, icon:"🍫", tags:["hot"], img:"纽约大曲奇.webp" },
-    { name:"巧克力布朗尼曲奇", desc:"双重巧克力享受，浓郁醇厚", modalDesc:"数量：15块<br>时长：1.5h - 1.5h<br>配料：安佳动物黄油、太古糖粉、马来西亚蓝黛可可粉、王后低筋粉、新鲜鸡蛋、百钻泡打粉、巧克力", price:138, icon:"🍫", tags:[], img:"布朗尼曲奇.webp" },
+    { name:"苹果切片曲奇", desc:"仿真苹果造型，清新可爱", modalDesc:"数量：30-40块<br>时长：2h<br>配料：安佳动物黄油、太古糖粉、王后低筋粉、新鲜鸡蛋、美国Lorann红丝绒液、黑芝麻", price:128, icon:"🍎", tags:[], img:"苹果曲奇.webp" },
+    { name:"蔓越莓花园曲奇", desc:"酸甜蔓越莓，花园风情", modalDesc:"数量：28-35块<br>时长：1.5h - 2h<br>配料：安佳动物黄油、太古糖粉、王后低筋粉、新鲜鸡蛋、抹茶粉、蔓越莓干", price:128, icon:"🌸", tags:[], img:"抹茶蔓越莓.webp" },
+    { name:"可可杏仁曲奇", desc:"浓郁可可与大颗杏仁，香脆可口", modalDesc:"数量：28-35块<br>时长：1.5h - 2h<br>配料：安佳动物黄油、太古糖粉、王后低筋粉、新鲜鸡蛋、可可粉、美国蓝钻杏仁片", price:128, icon:"🌰", tags:[], img:"可可杏仁.webp" },
+    { name:"蜘蛛花生酱曲奇", desc:"万圣节限定，趣味造型", modalDesc:"数量：15块<br>时长：1.5h<br>配料：安佳动物黄油、太古糖粉、王后低筋粉、新鲜鸡蛋、美国四季宝花生酱、百钻泡打粉、麦丽素", price:128, icon:"🕷️", tags:["limited"], img:"蜘蛛曲奇.webp" },
+    { name:"木乃伊可可曲奇", desc:"万圣节限定，神秘木乃伊造型", modalDesc:"数量：15块<br>时长：1.5h - 2h<br>配料：安佳动物黄油、太古糖粉、王后低筋粉、新鲜鸡蛋、可可粉、百钻泡打粉", price:128, icon:"🧟", tags:["limited"], img:"木乃伊曲奇.webp" },
+    { name:"经典纽约大曲奇", desc:"美式经典，大块巧克力碎片", modalDesc:"数量：8-12块<br>时长：1.5h - 2h<br>配料：安佳动物黄油、韩国TS幼砂糖、太古黄糖、王后低筋粉、新鲜鸡蛋、百钻泡打粉、巧克力、坚果", price:128, icon:"🍫", tags:["hot"], img:"纽约大曲奇.webp" },
+    { name:"巧克力布朗尼曲奇", desc:"双重巧克力享受，浓郁醇厚", modalDesc:"数量：15块<br>时长：1.5h<br>配料：安佳动物黄油、太古糖粉、可可粉、王后低筋粉、新鲜鸡蛋、百钻泡打粉、巧克力", price:138, icon:"🍫", tags:[], img:"布朗尼曲奇.webp" },
   ]},
   { id:"scone", label:"司康", items:[
-    { name:"经典蔓越莓司康", desc:"酸甜蔓越莓，外酥内软", modalDesc:"数量：12-18块<br>时长：1.5h - 1.5h<br>配料：安佳动物黄油、安佳动物奶油、韩国TS幼砂糖、王后低筋粉、澳大利亚德运奶粉、新鲜鸡蛋、蔓越莓干", price:128, icon:"🫐", tags:["hot"], img:"蔓越莓.webp" },
-    { name:"开心果千层司康", desc:"浓郁开心果，层层酥脆", modalDesc:"数量：12-18块<br>时长：1.5h - 1.5h<br>配料：安佳动物黄油、安佳动物奶油、韩国TS幼砂糖、王后低筋粉、澳大利亚德运奶粉、日本正荣开心果酱、新鲜鸡蛋", price:128, icon:"🥜", tags:["new"], img:"开心果.webp" },
-    { name:"伯爵红茶柠檬司康", desc:"伯爵红茶配柠檬，清新茶香", modalDesc:"数量：12-18块<br>时长：1.5h - 1.5h<br>配料：安佳动物黄油、安佳动物奶油、韩国TS幼砂糖、王后低筋粉、澳大利亚德运奶粉、斯里兰卡迪尔玛伯爵红茶、新鲜鸡蛋、新鲜柠檬", price:128, icon:"🍋", tags:[], img:"伯爵红茶司康.webp" },
-    { name:"抹茶红豆司康", desc:"宇治抹茶搭配蜜红豆，经典搭配", modalDesc:"数量：12-18块<br>时长：1.5h - 1.5h<br>配料：安佳动物黄油、安佳动物奶油、韩国TS幼砂糖、王后低筋粉、澳大利亚德运奶粉、宇治若竹抹茶粉、新鲜鸡蛋、蜜豆", price:128, icon:"🍵", tags:[], img:"抹茶红豆.webp" },
+    { name:"经典蔓越莓司康", desc:"酸甜蔓越莓，外酥内软", modalDesc:"数量：12-18块<br>时长：1.5h<br>配料：安佳动物黄油、安佳动物奶油、韩国TS幼砂糖、王后低筋粉、澳大利亚德运奶粉、新鲜鸡蛋、蔓越莓干", price:128, icon:"🫐", tags:["hot"], img:"蔓越莓.webp" },
+    { name:"开心果千层司康", desc:"浓郁开心果，层层酥脆", modalDesc:"数量：12-18块<br>时长：1.5h<br>配料：安佳动物黄油、安佳动物奶油、韩国TS幼砂糖、王后低筋粉、澳大利亚德运奶粉、日本正荣开心果酱、新鲜鸡蛋", price:128, icon:"🥜", tags:["new"], img:"开心果.webp" },
+    { name:"伯爵红茶柠檬司康", desc:"伯爵红茶配柠檬，清新茶香", modalDesc:"数量：12-18块<br>时长：1.5h<br>配料：安佳动物黄油、安佳动物奶油、韩国TS幼砂糖、王后低筋粉、澳大利亚德运奶粉、斯里兰卡迪尔玛伯爵红茶、新鲜鸡蛋、新鲜柠檬", price:128, icon:"🍋", tags:[], img:"伯爵红茶司康.webp" },
+    { name:"抹茶红豆司康", desc:"宇治抹茶搭配蜜红豆，经典搭配", modalDesc:"数量：12-18块<br>时长：1.5h<br>配料：安佳动物黄油、安佳动物奶油、韩国TS幼砂糖、王后低筋粉、澳大利亚德运奶粉、抹茶粉、新鲜鸡蛋、蜜豆", price:128, icon:"🍵", tags:[], img:"抹茶红豆.webp" },
   ]},
   { id:"snowflake", label:"雪花酥", items:[
     { name:"原味雪花酥", desc:"酥脆香甜，奶香浓郁", modalDesc:"规格：1份<br>时长：1h - 1.5h<br>配料：安佳动物黄油、澳大利亚德运奶粉、棉花糖、草莓冻干、小奇福饼干、坚果", price:128, icon:"❄️", tags:["hot"], img:"原味雪花酥.webp" },
-    { name:"抹茶雪花酥", desc:"清新抹茶，回甘悠长", modalDesc:"规格：1份<br>时长：1h - 1.5h<br>配料：安佳动物黄油、澳大利亚德运奶粉、宇治若竹抹茶粉、棉花糖、无花果冻干、草莓冻干、小奇福饼干、坚果", price:128, icon:"🍵", tags:[], img:"抹茶雪花酥.webp" },
-    { name:"奥利奥雪花酥", desc:"香脆奥利奥，双重美味", modalDesc:"规格：1份<br>时长：1h - 1.5h<br>配料：安佳动物黄油、澳大利亚德运奶粉、马来西亚蓝黛可可粉、棉花糖、草莓冻干、奥利奥饼干、小奇福饼干、坚果", price:128, icon:"🍫", tags:["new"], img:"奥利奥雪花酥.webp" },
+    { name:"抹茶雪花酥", desc:"清新抹茶，回甘悠长", modalDesc:"规格：1份<br>时长：1h - 1.5h<br>配料：安佳动物黄油、澳大利亚德运奶粉、抹茶粉、棉花糖、无花果冻干、草莓冻干、小奇福饼干、坚果", price:128, icon:"🍵", tags:[], img:"抹茶雪花酥.webp" },
+    { name:"奥利奥雪花酥", desc:"香脆奥利奥，双重美味", modalDesc:"规格：1份<br>时长：1h - 1.5h<br>配料：安佳动物黄油、澳大利亚德运奶粉、可可粉、棉花糖、草莓冻干、奥利奥饼干、小奇福饼干、坚果", price:128, icon:"🍫", tags:["new"], img:"奥利奥雪花酥.webp" },
   ]},
   { id:"nougat", label:"牛轧糖", items:[
     { name:"经典原味牛轧糖", desc:"香浓奶香，软糯可口", modalDesc:"规格：1份<br>时长：1h - 1.5h<br>配料：安佳动物黄油、澳大利亚德运奶粉、棉花糖、花生、蔓越莓干", price:128, icon:"🍬", tags:["hot"], img:"原味牛轧糖.webp" },
     { name:"芒果椰香牛轧糖", desc:"热带风情，芒果椰香", modalDesc:"规格：1份<br>时长：1h - 1.5h<br>配料：安佳动物黄油、澳大利亚德运奶粉、椰子油、棉花糖、巴旦木、印尼黄金椰粒、椰蓉", price:128, icon:"🥭", tags:["new"], img:"芒果牛轧糖.webp" },
-    { name:"抹茶花生牛轧糖", desc:"宇治抹茶搭配香脆花生", modalDesc:"规格：1份<br>时长：1h - 1.5h<br>配料：安佳动物黄油、澳大利亚德运奶粉、宇治若竹抹茶粉、棉花糖、花生、蔓越莓干", price:128, icon:"🍵", tags:[], img:"抹茶牛轧糖.webp" },
+    { name:"抹茶花生牛轧糖", desc:"宇治抹茶搭配香脆花生", modalDesc:"规格：1份<br>时长：1h - 1.5h<br>配料：安佳动物黄油、澳大利亚德运奶粉、抹茶粉、棉花糖、花生、蔓越莓干", price:128, icon:"🍵", tags:[], img:"抹茶牛轧糖.webp" },
   ]},
   { id:"dessert", label:"甜品", items:[
-    { name:"巧克力甜甜圈", desc:"外层巧克力酱，内里松软香甜", modalDesc:"规格：1份<br>时长：1.5h - 1.5h<br>配料：新鲜鸡蛋、韩国TS幼砂糖、王后低筋粉、百钻泡打粉、玉米油（非转基因）", price:128, icon:"🍩", tags:["hot"], img:"甜甜圈.webp" },
-    { name:"焦糖布丁", desc:"手工焦糖布丁，嫩滑细腻", modalDesc:"规格：1份<br>时长：1.5h - 1.5h<br>配料：安佳动物奶油、韩国TS幼砂糖、蒙牛纯牛奶、新鲜鸡蛋液", price:128, icon:"🍮", tags:[], img:"焦糖布丁.webp" },
-    { name:"巧克力蘑菇头麦芬", desc:"经典蘑菇头造型，浓郁巧克力", modalDesc:"规格：1份<br>时长：1.5h - 1.5h<br>配料：新鲜鸡蛋、韩国TS幼砂糖、王后低筋粉、蒙牛纯牛奶、马来西亚蓝黛可可粉、澳大利亚德运奶粉、百钻泡打粉、玉米油（非转基因）、法国可可百利巧克力", price:138, icon:"🧁", tags:[], img:"巧克力麦芬.webp" },
-    { name:"蓝莓蘑菇头麦芬", desc:"新鲜蓝莓点缀，清甜可口", modalDesc:"规格：1份<br>时长：1.5h - 1.5h<br>配料：新鲜鸡蛋、韩国TS幼砂糖、王后低筋粉、蒙牛纯牛奶、马来西亚蓝黛可可粉、澳大利亚德运奶粉、百钻泡打粉、玉米油（非转基因）、新鲜蓝莓", price:138, icon:"🧁", tags:["new"], img:"蓝莓麦芬.webp" },
-    { name:"柠檬玛德琳", desc:"清新柠檬香，小贝壳造型", modalDesc:"规格：1份<br>时长：2h - 2h<br>配料：安佳动物黄油、韩国TS幼砂糖、王后低筋粉、新鲜鸡蛋、澳大利亚德运奶粉、百钻泡打粉、新鲜柠檬", price:138, icon:"🐚", tags:[], img:"柠檬玛德琳.webp" },
-    { name:"可可玛德琳", desc:"浓郁可可香，经典法式风味", modalDesc:"规格：1份<br>时长：2h - 2h<br>配料：安佳动物黄油、韩国TS幼砂糖、王后低筋粉、新鲜鸡蛋、澳大利亚德运奶粉、百钻泡打粉、马来西亚蓝黛可可粉", price:138, icon:"🐚", tags:[], img:"可可玛德琳.webp" },
+    { name:"巧克力甜甜圈", desc:"外层巧克力酱，内里松软香甜", modalDesc:"规格：1份<br>时长：1.5h<br>配料：新鲜鸡蛋、韩国TS幼砂糖、王后低筋粉、百钻泡打粉、玉米油（非转基因）", price:128, icon:"🍩", tags:["hot"], img:"甜甜圈.webp" },
+    { name:"焦糖布丁", desc:"手工焦糖布丁，嫩滑细腻", modalDesc:"规格：1份<br>时长：1.5h<br>配料：安佳动物奶油、韩国TS幼砂糖、蒙牛纯牛奶、新鲜鸡蛋液", price:128, icon:"🍮", tags:[], img:"焦糖布丁.webp" },
+    { name:"巧克力蘑菇头麦芬", desc:"经典蘑菇头造型，浓郁巧克力", modalDesc:"规格：1份<br>时长：1.5h<br>配料：新鲜鸡蛋、韩国TS幼砂糖、王后低筋粉、蒙牛纯牛奶、可可粉、澳大利亚德运奶粉、百钻泡打粉、玉米油（非转基因）、法国可可百利巧克力", price:138, icon:"🧁", tags:[], img:"巧克力麦芬.webp" },
+    { name:"蓝莓蘑菇头麦芬", desc:"新鲜蓝莓点缀，清甜可口", modalDesc:"规格：1份<br>时长：1.5h<br>配料：新鲜鸡蛋、韩国TS幼砂糖、王后低筋粉、蒙牛纯牛奶、可可粉、澳大利亚德运奶粉、百钻泡打粉、玉米油（非转基因）、新鲜蓝莓", price:138, icon:"🧁", tags:["new"], img:"蓝莓麦芬.webp" },
+    { name:"柠檬玛德琳", desc:"清新柠檬香，小贝壳造型", modalDesc:"规格：1份<br>时长：2h<br>配料：安佳动物黄油、韩国TS幼砂糖、王后低筋粉、新鲜鸡蛋、澳大利亚德运奶粉、百钻泡打粉、新鲜柠檬", price:138, icon:"🐚", tags:[], img:"柠檬玛德琳.webp" },
+    { name:"可可玛德琳", desc:"浓郁可可香，经典法式风味", modalDesc:"规格：1份<br>时长：2h<br>配料：安佳动物黄油、韩国TS幼砂糖、王后低筋粉、新鲜鸡蛋、澳大利亚德运奶粉、百钻泡打粉、可可粉", price:138, icon:"🐚", tags:[], img:"可可玛德琳.webp" },
   ]},
   { id:"snack", label:"点心", items:[
-    { name:"经典凤梨酥", desc:"台氏经典，酸甜凤梨馅", modalDesc:"数量：6枚<br>时长：1.5h - 1.5h<br>配料：安佳动物黄油、太古糖粉、新鲜鸡蛋、王后低筋粉、特级土凤梨馅、黎宝斑斓粉", price:138, icon:"🍍", tags:["hot"], img:"凤梨酥.webp" },
-    { name:"低糖红豆奶酥", desc:"低糖配方，红豆香甜", modalDesc:"规格：1份<br>时长：2h - 2h<br>配料：安佳动物黄油、太古糖粉、新鲜鸡蛋、王后低筋粉、澳大利亚德运奶粉、低糖红豆沙馅", price:138, icon:"🥮", tags:[], img:"红豆奶酥.webp" },
-    { name:"笑脸娃娃蛋糕", desc:"可爱笑脸造型，童趣十足", modalDesc:"数量：1份<br>时长：1.5h - 1.5h<br>配料：安佳动物奶油、韩国TS幼砂糖、蒙牛牛奶、王后低筋粉、新鲜鸡蛋、玉米油（非转基因）、百钻泡打粉", price:138, icon:"😊", tags:["new"], img:"笑脸娃娃.webp" },
-    { name:"肉松小贝", desc:"柔软蛋糕体，裹满香酥肉松", modalDesc:"规格：1份<br>时长：1.5h - 1.5h<br>配料：王后低筋粉、韩国TS幼砂糖、蒙牛牛奶、新鲜鸡蛋、玉米油（非转基因）、丘比沙拉酱、海苔肉松", price:138, icon:"🍞", tags:[], img:"肉松小贝.webp" },
+    { name:"经典凤梨酥", desc:"台氏经典，酸甜凤梨馅", modalDesc:"数量：6枚<br>时长：1.5h<br>配料：安佳动物黄油、太古糖粉、新鲜鸡蛋、王后低筋粉、特级土凤梨馅、黎宝斑斓粉", price:138, icon:"🍍", tags:["hot"], img:"凤梨酥.webp" },
+    { name:"低糖红豆奶酥", desc:"低糖配方，红豆香甜", modalDesc:"规格：1份<br>时长：2h<br>配料：安佳动物黄油、太古糖粉、新鲜鸡蛋、王后低筋粉、澳大利亚德运奶粉、低糖红豆沙馅", price:138, icon:"🥮", tags:[], img:"红豆奶酥.webp" },
+    { name:"笑脸娃娃蛋糕", desc:"可爱笑脸造型，童趣十足", modalDesc:"数量：1份<br>时长：1.5h<br>配料：安佳动物奶油、韩国TS幼砂糖、蒙牛牛奶、王后低筋粉、新鲜鸡蛋、玉米油（非转基因）、百钻泡打粉", price:138, icon:"😊", tags:["new"], img:"笑脸娃娃.webp" },
+    { name:"肉松小贝", desc:"柔软蛋糕体，裹满香酥肉松", modalDesc:"规格：1份<br>时长：1.5h<br>配料：王后低筋粉、韩国TS幼砂糖、蒙牛牛奶、新鲜鸡蛋、玉米油（非转基因）、丘比沙拉酱、海苔肉松", price:138, icon:"🍞", tags:[], img:"肉松小贝.webp" },
     { name:"黄油坚果脆脆", desc:"香脆黄油与坚果的完美结合", modalDesc:"规格：1份<br>时长：1h - 1.5h<br>配料：安佳动物黄油、王后低筋粉、韩国TS幼砂糖、新鲜鸡蛋、坚果", price:128, icon:"🥜", tags:[], img:"坚果脆脆.webp" },
-    { name:"法式杏仁瓦片", desc:"薄脆杏仁片，香酥可口", modalDesc:"规格：1份<br>时长：1.5h - 1.5h<br>配料：安佳动物黄油、安佳动物奶油、王后低筋粉、太古糖粉、新鲜鸡蛋、美国蓝钻杏仁片", price:138, icon:"🍪", tags:[], img:"杏仁瓦片.webp" },
+    { name:"法式杏仁瓦片", desc:"薄脆杏仁片，香酥可口", modalDesc:"规格：1份<br>时长：1.5h<br>配料：安佳动物黄油、安佳动物奶油、王后低筋粉、太古糖粉、新鲜鸡蛋、美国蓝钻杏仁片", price:138, icon:"🍪", tags:[], img:"杏仁瓦片.webp" },
   ]},
   { id:"chocolate", label:"巧克力", items:[
-    { name:"迪拜巧克力", desc:"网红爆款，浓郁夹心，奢华体验", modalDesc:"规格：1份<br>时长：1.5h - 1.5h<br>配料：法国可可百利巧克力、安佳动物黄油、土耳其面包丝、日本正荣开心果酱、可食用色素（美国AmeriColor）", price:298, icon:"🍫", tags:["hot"], img:"迪拜巧克力.webp" },
+    { name:"迪拜巧克力", desc:"网红爆款，浓郁夹心，奢华体验", modalDesc:"规格：1份<br>时长：1.5h<br>配料：法国可可百利巧克力、安佳动物黄油、土耳其面包丝、日本正荣开心果酱、可食用色素（美国AmeriColor）", price:298, icon:"🍫", tags:["hot"], img:"迪拜巧克力.webp" },
   ]},
   { id:"festival", label:"节日限定", items:[
-    { name:"姜饼人糖霜饼干", desc:"节日必备，浓郁肉桂香", modalDesc:"数量：30-35块<br>时长：2h - 2h<br>配料：安佳动物黄油、太古糖粉、王后低筋粉、新鲜鸡蛋、马来西亚蓝黛可可粉<br>*周六日及法定节假日的12:00 - 18:00门店暂不支持制作", price:158, icon:"🏠", tags:["limited"], img:"姜饼人.webp" },
-    { name:"春日青团", desc:"艾草清香，豆沙馅软糯", modalDesc:"数量：8枚<br>时长：1.5h - 1.5h<br>配料：泰国三象水磨糯米粉、新良澄粉、麦苗汁、玉米油（非转基因）、韩国TS幼砂糖、馅料（低糖红豆沙、蛋黄肉松、低糖芋泥）", price:138, icon:"🌿", tags:["limited"], img:"青团.webp" },
-    { name:"广式月饼", desc:"经典广式，蛋黄莲蓉", modalDesc:"数量：8枚<br>时长：1h - 1.5h<br>配料：顺南金装糖浆、王后低筋粉、花生油（非转基因）、中筋面粉、新鲜鸡蛋、馅料（低糖金沙奶黄、低糖红豆沙、低糖芋泥奇亚籽、低糖粒粒山楂）", price:158, icon:"🥮", tags:["limited"], img:"广式月饼.webp" },
+    { name:"姜饼人糖霜饼干", desc:"节日必备，浓郁肉桂香", modalDesc:"数量：30-35块<br>时长：2.5h - 3.5h<br>配料：安佳动物黄油、太古糖粉、王后低筋粉、新鲜鸡蛋、可可粉<br>*周六日及法定节假日的12:00 - 18:00门店暂不支持制作", price:158, icon:"🏠", tags:["limited"], img:"姜饼人.webp" },
+    { name:"春日青团", desc:"艾草清香，豆沙馅软糯", modalDesc:"数量：8枚<br>时长：1.5h - 2h<br>配料：泰国三象水磨糯米粉、新良澄粉、麦苗汁、玉米油（非转基因）、韩国TS幼砂糖、馅料（低糖红豆沙、蛋黄肉松、低糖芋泥）", price:138, icon:"🌿", tags:["limited"], img:"青团.webp" },
+    { name:"广式月饼", desc:"经典广式，蛋黄莲蓉", modalDesc:"数量：8枚<br>时长：2h<br>配料：顺南金装糖浆、王后低筋粉、花生油（非转基因）、中筋面粉、新鲜鸡蛋、馅料（低糖金沙奶黄、低糖红豆沙、低糖芋泥奇亚籽、低糖粒粒山楂）", price:158, icon:"🥮", tags:["limited"], img:"广式月饼.webp" },
     { name:"桃山皮月饼", desc:"日式桃山皮，细腻绵软", modalDesc:"数量：8枚<br>时长：1h - 1.5h<br>配料：桃山皮、馅料（低糖金沙奶黄、低糖红豆沙、低糖芋泥奇亚籽、低糖粒粒山楂）", price:138, icon:"🥮", tags:["limited"], img:"桃山皮月饼.webp" },
     { name:"冰皮月饼", desc:"Q弹冰皮，多种口味", modalDesc:"数量：8枚<br>时长：1h - 1.5h<br>配料：冰皮粉、馅料（低糖金沙奶黄、低糖红豆沙、低糖芋泥奇亚籽、低糖粒粒山楂）", price:138, icon:"🧊", tags:["limited"], img:"冰皮月饼.webp" },
-    { name:"圣诞肉桂苹果酥", desc:"肉桂香气，节日限定", modalDesc:"数量：6枚<br>时长：1.5h - 1.5h<br>配料：安佳动物黄油、太古糖粉、雀巢鹰唛炼乳、新鲜鸡蛋、澳大利亚德运奶粉、王后低筋粉、马来西亚蓝黛可可粉、宇治若竹抹茶粉、美国Lorann红丝绒液、肉桂苹果馅", price:138, icon:"🍎", tags:["limited"], img:"苹果酥.webp" },
+    { name:"圣诞肉桂苹果酥", desc:"肉桂香气，节日限定", modalDesc:"数量：6枚<br>时长：1.5h<br>配料：安佳动物黄油、太古糖粉、雀巢鹰唛炼乳、新鲜鸡蛋、澳大利亚德运奶粉、王后低筋粉、可可粉、抹茶粉、美国Lorann红丝绒液、肉桂苹果馅", price:138, icon:"🍎", tags:["limited"], img:"苹果酥.webp" },
     { name:"草莓裸蛋糕", desc:"草莓奶油蛋糕，层层叠加", modalDesc:"规格：6寸<br>时长：1h - 1.5h<br>配料：安佳动物奶油、韩国TS幼砂糖、王后低筋粉、蒙牛纯牛奶、新鲜鸡蛋、玉米油（非转基因）、新鲜草莓", price:198, icon:"🍓", tags:["limited"], img:"裸蛋糕.webp" },
-    { name:"爱心甜甜圈", desc:"浪漫爱心造型，甜蜜献礼", modalDesc:"规格：1份<br>时长：1.5h - 1.5h<br>配料：新鲜鸡蛋、韩国TS幼砂糖、王后低筋粉、百钻泡打粉、玉米油（非转基因）", price:128, icon:"💕", tags:["limited"], img:"爱心甜甜圈.webp" },
+    { name:"爱心甜甜圈", desc:"浪漫爱心造型，甜蜜献礼", modalDesc:"规格：1份<br>时长：1.5h<br>配料：新鲜鸡蛋、韩国TS幼砂糖、王后低筋粉、百钻泡打粉、玉米油（非转基因）", price:128, icon:"💕", tags:["limited"], img:"爱心甜甜圈.webp" },
   ]},
   { id:"about", label:"关于本店", items:[
-    { name:"预约须知", desc:"提前预约到店，为你预留专属烘焙时光", modalDesc:"预约时间：请提前1-3天预约<br>取货方式：到店自提<br>配送范围：本地可配送，详情请咨询", modalImg:"预约须知.webp", price:0, icon:"📝", tags:[], img:"预约.webp" },
-    { name:"温馨提示", desc:"全程老师指导，零基础也能轻松完成", modalDesc:"手工制作，限量供应，售完即止<br>如有特殊需求，请提前沟通<br>期待与您的相遇", modalImg:"温馨提示1.webp", price:0, icon:"💝", tags:[], img:"提示.webp" },
+    { name:"预约须知", desc:"提前预约到店，为你预留专属烘焙时光", modalDesc:"", modalImg:"预约须知.png", price:0, icon:"📝", tags:[], img:"预约.webp", imageOnly:true },
+    { name:"温馨提示", desc:"全程老师指导，零基础也能轻松完成", modalDesc:"", modalImg:"温馨提示1.png", price:0, icon:"💝", tags:[], img:"提示.webp", imageOnly:true },
     { name:"动物奶油", desc:"安佳动物奶油", modalDesc:"拒绝使用「乳脂奶油」或「植物奶油」，本店承诺所有奶油产品100%选用新西兰进口安佳纯动物奶油，贵一点更安心。", modalImg:"奶油.png", price:0, icon:"🥛", tags:[], img:"奶油icon.webp" },
     { name:"动物黄油", desc:"安佳动物黄油", modalDesc:"拒绝使用「植物黄油」，本店承诺所有黄油产品100%选用新西兰进口安佳纯动物黄油，贵一点更安心。", modalImg:"黄油.webp", price:0, icon:"🧈", tags:[], img:"黄油icon.webp" },
   ]},
@@ -238,6 +256,7 @@ const tabEl = document.getElementById('tabs');
 const menuEl = document.getElementById('menuList');
 const modalOverlay = document.getElementById('modalOverlay');
 const modalProductImg = document.getElementById('modalProductImg');
+const modalInfo = document.querySelector('.modal-info');
 const modalProductName = document.getElementById('modalProductName');
 const modalProductDesc = document.getElementById('modalProductDesc');
 const modalPrice = document.getElementById('modalPrice');
@@ -245,6 +264,8 @@ const modalPrice = document.getElementById('modalPrice');
 let activeIdx = 0;
 let scrollTimeout = null;
 let isClickScrolling = false;
+const preloadedModalImages = new Set();
+let modalOpenFrame = null;
 
 function tagHtml(tags) {
   if (!tags || !tags.length) return '';
@@ -263,18 +284,45 @@ function getTagLabel(tags) {
   return '';
 }
 
+function getDisplayImg(item) {
+  return item.modalImg || item.img || '';
+}
+
+function preloadModalImage(item) {
+  const src = getDisplayImg(item);
+  if (!src || preloadedModalImages.has(src)) return;
+  preloadedModalImages.add(src);
+  const img = new Image();
+  img.decoding = 'async';
+  img.src = src;
+  if (img.decode) img.decode().catch(() => {});
+}
+
 function openModal(item) {
-  const displayImg = item.modalImg || item.img;
+  const displayImg = getDisplayImg(item);
+  const imageOnly = item.imageOnly === true;
+  preloadModalImage(item);
+  if (modalOpenFrame) cancelAnimationFrame(modalOpenFrame);
+  modalOverlay.classList.remove('active');
+  modalOverlay.classList.toggle('image-only', imageOnly);
   modalProductImg.innerHTML = displayImg ? '<div class="img-container"><img src="' + displayImg + '"></div>' : '<div class="img-container"><span style="font-size:90px">' + item.icon + '</span></div>';
   modalProductName.textContent = item.name;
   const tagLabel = getTagLabel(item.tags);
   modalProductDesc.innerHTML = item.modalDesc || item.desc;
   modalPrice.innerHTML = '<span>¥</span>' + item.price;
-  modalOverlay.classList.add('active');
+  modalProductImg.scrollTop = 0;
+  if (modalInfo) modalInfo.scrollTop = 0;
+  modalOpenFrame = requestAnimationFrame(() => {
+    modalOverlay.classList.add('active');
+    modalOpenFrame = null;
+  });
 }
 
 function closeModal() {
+  if (modalOpenFrame) cancelAnimationFrame(modalOpenFrame);
+  modalOpenFrame = null;
   modalOverlay.classList.remove('active');
+  modalOverlay.classList.remove('image-only');
 }
 
 function updateActiveTab(idx) {
@@ -326,6 +374,8 @@ function renderMenu() {
       d.className = 'item-card';
       const imageAttrs = item.img ? (cat.id === 'cake' ? ' loading="eager" fetchpriority="high" decoding="async"' : ' loading="lazy" decoding="async"') : '';
       d.innerHTML = '<div class="item-img">' + (item.img ? '<img src="' + item.img + '"' + imageAttrs + '>' : item.icon) + '</div><div class="item-info"><div class="item-name">' + item.name + '</div>' + tagHtml(item.tags) + '<div class="item-desc">' + item.desc + '</div><div class="item-price"><span>¥</span>' + item.price + '</div></div>';
+      d.onpointerenter = () => preloadModalImage(item);
+      d.onpointerdown = () => preloadModalImage(item);
       d.onclick = () => openModal(item);
       sec.appendChild(d);
     });
