@@ -1,0 +1,61 @@
+name: Deploy MamaMoon static site
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+concurrency:
+  group: production-deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: production
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup SSH
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          SSH_HOST: ${{ secrets.REMOTE_HOST }}
+          SSH_PORT: ${{ secrets.SSH_PORT }}
+        run: |
+          mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
+          printf '%s\n' "$SSH_PRIVATE_KEY" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan -p "${SSH_PORT}" -H "${SSH_HOST}" >> ~/.ssh/known_hosts
+          chmod 600 ~/.ssh/known_hosts
+
+      - name: Deploy files with rsync
+        env:
+          SSH_HOST: ${{ secrets.REMOTE_HOST }}
+          SSH_USER: ${{ secrets.REMOTE_USER }}
+          SSH_PORT: ${{ secrets.SSH_PORT }}
+          REMOTE_TARGET: ${{ secrets.REMOTE_TARGET }}
+        run: |
+          rsync -avz --delete \
+            -e "ssh -i ~/.ssh/deploy_key -p ${SSH_PORT} -o StrictHostKeyChecking=yes" \
+            ./ \
+            "${SSH_USER}@${SSH_HOST}:${REMOTE_TARGET}"
+
+      - name: Fix permissions on server
+        env:
+          SSH_HOST: ${{ secrets.REMOTE_HOST }}
+          SSH_USER: ${{ secrets.REMOTE_USER }}
+          SSH_PORT: ${{ secrets.SSH_PORT }}
+          REMOTE_TARGET: ${{ secrets.REMOTE_TARGET }}
+        run: |
+          ssh -i ~/.ssh/deploy_key -p "${SSH_PORT}" \
+            "${SSH_USER}@${SSH_HOST}" \
+            "chown -R www:www ${REMOTE_TARGET} && find ${REMOTE_TARGET} -type d -exec chmod 755 {} \\; && find ${REMOTE_TARGET} -type f -exec chmod 644 {} \\;"
+
+      - name: Verify site responds
+        run: |
+          curl -fsS --retry 3 https://www.mamamoon.cn/ > /dev/null
+#（注：内容由AI生成）
