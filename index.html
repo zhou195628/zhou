@@ -74,6 +74,8 @@ html, body { height: 100%; font-family: -apple-system, BlinkMacSystemFont, 'Ping
 .menu-list::-webkit-scrollbar { display: none; }
 .category-title { font-size: 14px; font-weight: 600; color: #1a1a1a; padding: 14px 14px 10px; background: #fff; position: sticky; top: 0; z-index: 2; border-bottom: 0.5px solid #f0ece4; display: flex; align-items: baseline; gap: 4px; }
 .category-count { font-size: 12px; color: #bbb; font-weight: 400; }
+.category-banner { padding: 12px 14px 0; background: #fff; }
+.category-banner img { width: 100%; height: auto; display: block; border-radius: 8px; }
 .item-card { display: flex; align-items: stretch; gap: 10px; padding: 12px 14px; border-bottom: 0.5px solid #f5f2ec; cursor: pointer; transition: background-color 0.18s ease, transform 0.18s ease; touch-action: manipulation; }
 .item-card:active { background: #f9f7f4; transform: scale(0.985); }
 .item-img { width: 89px; height: 89px; border-radius: 10px; background: #f5f0e8; display: flex; align-items: center; justify-content: center; font-size: 32px; flex-shrink: 0; overflow: hidden; }
@@ -163,7 +165,7 @@ const imgCheese3 = "图片蛋糕替换.webp";
 const imgCheese4 = "图片蛋糕替换 (2).webp";
 
 const categories = [
-  { id:"new-recommend", label:"新品推荐", items:[
+  { id:"new-recommend", label:"新品推荐", banner:"甘纳许曲奇banner图.webp", items:[
     { name:"明治甘纳许曲奇", desc:"浓郁巧克力香，口感醇厚", modalDesc:"数量：6个<br>时长：1.5h - 2h<br>配料：安佳动物黄油、太古黄糖、安佳动物奶油、明治巧克力", price:158, icon:"🍫", tags:["new"], img:"明治甘纳许曲奇.webp" },
     { name:"雪人可可黄油饼干", desc:"可爱雪人造型，可可香浓", modalDesc:"数量：21-25块<br>时长：1.5h - 2h<br>配料：安佳动物黄油、太古糖粉、王后低筋粉、新鲜鸡蛋、可可粉、棉花糖", price:138, icon:"🍪", tags:["new"], img:"雪人可可黄油饼干.webp" },
     { name:"星星“搬砖”黄油饼干", desc:"趣味星星造型，坚果香脆", modalDesc:"数量：25-30块<br>时长：1.5h - 2h<br>配料：安佳动物黄油、太古糖粉、王后低筋粉、新鲜鸡蛋、坚果", price:138, icon:"🍪", tags:["new"], img:"星星搬砖黄油饼干.webp" },
@@ -196,7 +198,7 @@ const categories = [
     { name:"复古糖霜饼干", desc:"复古花纹设计，精致优雅", modalDesc:"数量：24-30块<br>时长：2.5h - 3.5h<br>配料：安佳动物黄油、太古糖粉、王后低筋粉、新鲜鸡蛋<br>*周六日及法定节假日的12:00 - 18:00门店暂不支持制作", price:158, icon:"✨", tags:[], img:"复古糖霜.webp" },
   ]},
   { id:"cookies", label:"曲奇", items:[
-    { name:"玻璃曲奇", desc:"晶透糖心点缀，酥脆香甜", modalDesc:"数量：22-25块<br>时长：1.5h - 2h<br>配料：安佳动物黄油、太古糖粉、王后低筋粉、新鲜鸡蛋、Foxs水晶糖（印尼进口）", price:158, icon:"🍪", tags:[], img:"玻璃曲奇.webp" },
+    { name:"Foxs玻璃曲奇", desc:"晶透糖心点缀，酥脆香甜", modalDesc:"数量：22-25块<br>时长：1.5h - 2h<br>配料：安佳动物黄油、太古糖粉、王后低筋粉、新鲜鸡蛋、Foxs水晶糖（印尼进口）", price:158, icon:"🍪", tags:[], img:"玻璃曲奇.webp" },
     { name:"爱心黄油曲奇", desc:"浪漫爱心造型，浓郁黄油香", modalDesc:"数量：22-25块<br>时长：1.5h - 2h<br>配料：安佳动物黄油、太古糖粉、王后低筋粉、新鲜鸡蛋、美国Lorann红丝绒液", price:138, icon:"❤️", tags:["hot"], img:"爱心曲奇.webp" },
     { name:"圣诞黄油曲奇", desc:"节日限定款，圣诞主题造型", modalDesc:"数量：22-25块<br>时长：1.5h - 2h<br>配料：安佳动物黄油、太古糖粉、王后低筋粉、新鲜鸡蛋、口味粉（可可粉/抹茶粉）", price:138, icon:"🎄", tags:[], img:"圣诞曲奇.webp" },
     { name:"草莓酱爱心曲奇", desc:"酥脆曲奇搭配自制草莓酱，酸甜可口", modalDesc:"数量：18-22块<br>时长：1.5h - 2h<br>配料：安佳动物黄油、太古糖粉、王后低筋粉、新鲜鸡蛋、草莓酱", price:128, icon:"🍓", tags:[], img:"草莓酱曲奇.webp" },
@@ -380,6 +382,12 @@ function renderMenu() {
     ttl.dataset.catId = cat.id;
     ttl.innerHTML = cat.label + ' <span class="category-count">(' + cat.items.length + ')</span>';
     sec.appendChild(ttl);
+    if (cat.banner) {
+      const banner = document.createElement('div');
+      banner.className = 'category-banner';
+      banner.innerHTML = '<img src="' + cat.banner + '" alt="' + cat.label + '" loading="lazy" decoding="async">';
+      sec.appendChild(banner);
+    }
     cat.items.forEach((item) => {
       const d = document.createElement('div');
       d.className = 'item-card';
